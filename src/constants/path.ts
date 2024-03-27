@@ -1,6 +1,8 @@
 export const PATH = {
   HOME: "/",
   MY: "/my",
+  MY_ARTICLES: "/my/articles",
+  MY_BOOKMARKS: "/my/bookmarks",
 } as const;
 
 // TODO 환경 변수로 제거 필요
