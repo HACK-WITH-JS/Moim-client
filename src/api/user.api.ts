@@ -6,12 +6,21 @@ export const userAPI = {
   endPoint: {
     default: "/user",
     me: "/user/me",
+    update: "/user",
   },
 
   me: async () => {
-    // TODO : 에러 처리
     const ret = await axiosInstance.get<APIResponse<UserAuthInfo>>(
       userAPI.endPoint.me
+    );
+
+    return ret.data.data as UserAuthInfo;
+  },
+
+  update: async (data: UserAuthInfo) => {
+    const ret = await axiosInstance.put<APIResponse<UserAuthInfo>>(
+      userAPI.endPoint.update,
+      data
     );
 
     return ret.data.data as UserAuthInfo;
