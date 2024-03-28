@@ -7,6 +7,7 @@ export const userAPI = {
     default: "/user",
     me: "/user/me",
     update: "/user",
+    delete: "/user",
   },
 
   me: async () => {
@@ -21,6 +22,14 @@ export const userAPI = {
     const ret = await axiosInstance.put<APIResponse<UserAuthInfo>>(
       userAPI.endPoint.update,
       data
+    );
+
+    return ret.data.data as UserAuthInfo;
+  },
+
+  delete: async () => {
+    const ret = await axiosInstance.delete<APIResponse<UserAuthInfo>>(
+      userAPI.endPoint.delete
     );
 
     return ret.data.data as UserAuthInfo;
