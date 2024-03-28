@@ -84,7 +84,7 @@ function Profile({ profileImageUrl }: Pick<UserAuthInfo, "profileImageUrl">) {
           <MenuItem onClick={() => navigate(PATH.MY)}>
             <Text>설정</Text>
           </MenuItem>
-
+          {/* TODO 로그아웃 기능 구현 */}
           <MenuItem>
             <Text>로그아웃</Text>
           </MenuItem>
